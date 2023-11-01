@@ -1,0 +1,30 @@
+h1{
+   font-family: 'Poppins';
+    color: whitesmoke;
+    
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.main{
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.header{
+    width: 80%;
+    background-color: #B88DB3;
+    margin: 0 auto;
+    padding: 20px;  
+}
+.container{
+    width: 80%;
+    background-color: blanchedalmond;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins';
+    color: #785D75;
+}
