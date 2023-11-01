@@ -24,7 +24,7 @@ class Events_DAO {
 
     }
     public function fetchEvents(){
-        $query="select * from events";
+        $query="select * from events order by start_date desc";
         $stmt=$this->conn->query($query);
         $events=[];
         while ($row=$stmt->fetch_assoc()){
