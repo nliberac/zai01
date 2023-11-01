@@ -141,9 +141,9 @@ class Event {
 		return $this;
 	}
 
-    public function showEvent($event){
-        echo '<div class="container'.$event->getCategory_id().'">'.$event->getName().'<p>';
-        echo $event->getDescription().'</p></div>';
+    public function showEvent(){
+        echo '<div class="container'.$this->getCategory_id().'">'.$this->getName().'<p>';
+        echo $this->getDescription().'</p></div>';
 
     }
 

@@ -17,7 +17,10 @@
         include('Events_DAO.php');
        
         $dao=new Events_DAO();
-        
+        $events=$dao->fetchEvents();
+        foreach($events as $event) {
+            $event->showEvent();
+        }
         ?>
         </div>
         </div>

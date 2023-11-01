@@ -25,14 +25,14 @@ class Events_DAO {
     }
     public function fetchEvents(){
         $query="select * from events";
-        $stmt=$this->pdo->query($query);
+        $stmt=$this->conn->query($query);
         $events=[];
-        while ($row=$stmt->fetch()){
+        while ($row=$stmt->fetch_assoc()){
             
            $event=new Event(
-            $row['is'],
+            $row['id'],
             $row['name'],
-            $row['start-date'],
+            $row['start_date'],
             $row['end_date'],
             $row['description'],
             'images/'.$row['category_id'],
