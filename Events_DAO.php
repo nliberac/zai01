@@ -42,6 +42,8 @@ class Events_DAO {
         
            
             }
+            $this->conn->close();
             return $events;
+            
         }
 }

@@ -3,6 +3,10 @@ h1{
     color: whitesmoke;
     
 }
+h2{
+    font-family: 'Poppins';
+    color: #404950; 
+}
 body{
     display: flex;
     justify-content: center;
@@ -20,9 +24,57 @@ body{
     margin: 0 auto;
     padding: 20px;  
 }
-.container{
+.container1{
     width: 80%;
     background-color: blanchedalmond;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins';
+    color: #785D75;
+}
+.container2{
+    width: 80%;
+    background-color: #A4D5AA;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins';
+    color: #785D75;
+}
+.container3{
+    width: 80%;
+    background-color: #CCE9FF;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins';
+    color: #785D75;
+}
+.container4{
+    width: 80%;
+    background-color: #BFAC8F;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins';
+    color: #785D75;
+}
+.container5{
+    width: 80%;
+    background-color: #FFEBCC;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins';
+    color: #785D75;
+}
+.container6{
+    width: 80%;
+    background-color: #85CDC8;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Poppins';
+    color: #785D75;
+}
+.container7{
+    width: 80%;
+    background-color: #CBDB58;
     margin: 0 auto;
     padding: 20px;
     font-family: 'Poppins';

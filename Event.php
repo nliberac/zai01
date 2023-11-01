@@ -142,7 +142,7 @@ class Event {
 	}
 
     public function showEvent(){
-        echo '<div class="container'.$this->getCategory_id().'">'.$this->getName().'<p>';
+        echo '<div class="container'.$this->getCategory_id().'"><h2>'.$this->getStart_date().'-'.$this->getEnd_date().'</h2><p>'.$this->getName().'<p>';
         echo $this->getDescription().'</p></div>';
 
     }
