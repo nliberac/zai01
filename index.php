@@ -75,7 +75,7 @@ event=eventsData[0];
 
             ctx.fillStyle = 'red'; // Możesz dostosować kolor wypełnienia
             ctx.fill();
-        });
+       // });
         </script>
         </div>
         </div>
