@@ -97,12 +97,13 @@ body{
 .event{
     display: flex;
     align-items: center;
-    background-color: #FFEBCC ;
+    
 }
 .event-details{
     margin: 20px;
     width: 400px;
-
+    background-color: floralwhite ;
+   
     
 
 }
