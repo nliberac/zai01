@@ -55,9 +55,8 @@
     echo "const eventsData = " . json_encode($eventArray) . ";";
         ?>
         eventsData.forEach(event => {
-            console.log("petla");
-            const startDate = new Date(event.start_date);
-            const endDate = new Date(event.end_date);
+            const startDate = new Date(event["start_date"]);
+            const endDate = new Date(event["end_date"]);
             const endYTimestamp = endDate.getTime() / 1000;
             const startYTimestamp = startDate.getTime() / 1000;
             const currentTimestamp = Date.now() / 1000;
