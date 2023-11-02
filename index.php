@@ -54,7 +54,8 @@
     // Teraz możesz użyć json_encode na tablicy asocjacyjnej
     echo "const eventsData = " . json_encode($eventArray) . ";";
         ?>
-        eventsData.forEach(event => {
+event=eventsData[0];
+       /* eventsData.forEach(event => {*/
             const startDate = new Date(event["start_date"]);
             const endDate = new Date(event["end_date"]);
             const endYTimestamp = endDate.getTime() / 1000;
