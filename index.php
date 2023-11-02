@@ -37,9 +37,23 @@
        
         $dao=new Events_DAO();
         $events=$dao->fetchEvents();
-        echo "const eventsData = " . json_encode($events) . ";";
+        // Przekształć obiekty Event na tablice asocjacyjne
+        $eventArray = array();
+        foreach ($events as $event) {
+        $eventArray[] = array(
+        'id' => $event->getId(),
+        'name' => $event->getName(),
+        'start_date' => $event->getStart_date(),
+        'end_date' => $event->getEnd_date(),
+        'description' => $event->getDescription(),
+        'visualization' => $event->getVisualization(),
+        'category_id' => $event->getCategory_id()
+    );
+    };
+
+    // Teraz możesz użyć json_encode na tablicy asocjacyjnej
+    echo "const eventsData = " . json_encode($eventArray) . ";";
         ?>
-    
         eventsData.forEach(event => {
             const startDate = new Date(event.start_date);
             const endDate = new Date(event.end_date);
