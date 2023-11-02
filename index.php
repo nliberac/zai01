@@ -37,26 +37,28 @@
        
         $dao=new Events_DAO();
         $events=$dao->fetchEvents();
-        foreach($events as $event) {
-           $startDate=new DateTime($event->getStart_date());
-           $endDate=new DateTime($event->getEnd_date());
-           $endYTimestamp = $endDate->getTimestamp();
-           $startYTimestamp = $startDate->getTimestamp();
-           $currentTimestamp = (new DateTime('now'))->getTimestamp();
-   
-           echo "const scaleFactor = (endY - startY) / ($endYTimestamp - $startYTimestamp);";
-           echo "const startYDate = startY + ($startYTimestamp - $currentTimestamp) * scaleFactor;";
-           echo "const endYDate = startY + ($endYTimestamp - $currentTimestamp) * scaleFactor;";
-            
-           echo "ctx.beginPath();
-                    ctx.moveTo(startX - 10, startYDate);
-                    ctx.lineTo(startX + 10, startYDate);
-                    ctx.lineWidth = 2;
-                    ctx.strokeStyle = 'red'; // Możesz dostosować kolor
-                    ctx.stroke();
-                    ctx.closePath();";
-        }
+        echo "const eventsData = " . json_encode($events) . ";";
         ?>
+    
+        eventsData.forEach(event => {
+            const startDate = new Date(event.start_date);
+            const endDate = new Date(event.end_date);
+            const endYTimestamp = endDate.getTime() / 1000;
+            const startYTimestamp = startDate.getTime() / 1000;
+            const currentTimestamp = Date.now() / 1000;
+    
+            const scaleFactor = (endY - startY) / (endYTimestamp - startYTimestamp);
+            const startYDate = startY + (startYTimestamp - currentTimestamp) * scaleFactor;
+            const endYDate = startY + (endYTimestamp - currentTimestamp) * scaleFactor;
+    
+            ctx.beginPath();
+            ctx.moveTo(startX - 10, startYDate);
+            ctx.lineTo(startX + 10, startYDate);
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = 'red'; // Możesz dostosować kolor
+            ctx.stroke();
+            ctx.closePath();
+        });
         </script>
         </div>
         </div>
