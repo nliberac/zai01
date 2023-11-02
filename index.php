@@ -68,10 +68,12 @@
             ctx.beginPath();
             ctx.moveTo(startX - 10, startYDate);
             ctx.lineTo(startX + 10, startYDate);
-            ctx.lineWidth = 2;
-            ctx.strokeStyle = 'red'; // Możesz dostosować kolor
-            ctx.stroke();
+            ctx.lineTo(startX + 10, endYDate); // Rysowanie linii do końca zdarzenia
+            ctx.lineTo(startX - 10, endYDate); // Zamknięcie odcinka
             ctx.closePath();
+
+            ctx.fillStyle = 'red'; // Możesz dostosować kolor wypełnienia
+            ctx.fill();
         });
         </script>
         </div>
