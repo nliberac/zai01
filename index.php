@@ -26,7 +26,7 @@
             <div class="event-details">
                 <h2>'.$event->getName().'</h2>
                 <p>Data: '.$event->getStart_date().'</p>
-            </div>
+            </div><div><img src="'.$event->getVisualization().'"></div>
 </div>';
         }
 ?>

@@ -35,7 +35,7 @@ class Events_DAO {
             $row['start_date'],
             $row['end_date'],
             $row['description'],
-            'images/'.$row['category_id'],
+            'images/'.$row['category_id'].'.svg',
             $row['category_id']
            );
            $events[]=$event;
