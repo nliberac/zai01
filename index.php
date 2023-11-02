@@ -55,13 +55,24 @@
     echo "const eventsData = " . json_encode($eventArray) . ";";
         ?>
 event=eventsData[0];
-       /* eventsData.forEach(event => {*/
+            eventsData.forEach(event => {
             const startDate = new Date(event["start_date"]);
             const endDate = new Date(event["end_date"]);
             const endYTimestamp = endDate.getTime() / 1000;
             const startYTimestamp = startDate.getTime() / 1000;
             const currentTimestamp = Date.now() / 1000;
-    
+            if (endYTimestamp === startYTimestamp) {
+            const startYDate = startY + (startYTimestamp - currentTimestamp) * scaleFactor;
+            const endYDate = startY + (endYTimestamp - currentTimestamp) * scaleFactor;
+
+            ctx.beginPath();
+            ctx.moveTo(startX - 10, startYDate);
+            ctx.lineTo(startX + 10, startYDate);
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = 'red'; // Możesz dostosować kolor
+            ctx.stroke();
+            ctx.closePath();
+            } else {
             const scaleFactor = (endY - startY) / (endYTimestamp - startYTimestamp);
             const startYDate = startY + (startYTimestamp - currentTimestamp) * scaleFactor;
             const endYDate = startY + (endYTimestamp - currentTimestamp) * scaleFactor;
@@ -71,11 +82,13 @@ event=eventsData[0];
             ctx.lineTo(startX + 10, startYDate);
             ctx.lineTo(startX + 10, endYDate); // Rysowanie linii do końca zdarzenia
             ctx.lineTo(startX - 10, endYDate); // Zamknięcie odcinka
+            ctx.lineWidth = 2;
+            ctx.strokeStyle = 'red'; // Możesz dostosować kolor
+            ctx.stroke();
             ctx.closePath();
 
-            ctx.fillStyle = 'red'; // Możesz dostosować kolor wypełnienia
-            ctx.fill();
-       // });
+            }
+        });
         </script>
         </div>
         </div>
