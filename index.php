@@ -62,6 +62,7 @@
             const startYTimestamp = startDate.getTime() / 1000;
             const currentTimestamp = Date.now() / 1000;
             if (endYTimestamp === startYTimestamp) {
+            const scaleFactor = (endY - startY) / 86400;
             const startYDate = startY + (startYTimestamp - currentTimestamp) * scaleFactor;
             const endYDate = startY + (endYTimestamp - currentTimestamp) * scaleFactor;
 
