@@ -11,6 +11,7 @@
     <h1>Szczegoly</h1>
     </div>
     <div class="container1">
+        <div class="timeline">
     <?php
     include('Events_DAO.php');
     $dao = new Events_DAO();
@@ -19,7 +20,7 @@
     if($event){
         echo '<div class="event">
         <div class="event-details">
-        <h1>'.$event->getName().'</h1>
+        <h2>'.$event->getName().'</h2>
         <p>Kategoria: '.$dao->fetchCategoryName($eventId).'
         <p>Data rozpoczecia: '.$event->getStart_date().'</p>
         <p>Data zakonczenia: '.$event->getEnd_date().'
@@ -30,7 +31,7 @@
         echo 'Nie zanleziono wydarzenia';
     }
     ?>
-    </div>
+    </div></div>
     <a href="index.php">Powrót do Kalendarium</a>
     </div>
 </body>
