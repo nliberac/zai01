@@ -24,7 +24,7 @@
        echo '<div class="event">
             <div class="event-point"></div>
             <div class="event-details">
-                <h2><a href="event_details.php?id='.$event->getId().'">'.$event->getName().'</h2>
+                <h2><a href="event_details.php?id='.$event->getId().'">'.$event->getName().'</a></h2>
                 <p>Data: '.$event->getStart_date().'</p>
             </div><div><img src="'.$event->getVisualization().'"></div>
             </div>';
