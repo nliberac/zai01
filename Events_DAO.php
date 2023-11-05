@@ -46,4 +46,15 @@ class Events_DAO {
             return $events;
             
         }
+        public function fetchEventById($id){
+            $query= "select e.name, e.description, e.start_date, e.end_date, e.category_d, c.name 
+            from events as e
+            join categories as c
+            on c.id=e.id
+            where e.id=1;";
+            $stmt=$this->conn->query($query);
+            $row=$stmt->fetch_assoc();
+            $event=new Event($id, $row['name'], $row['start_date'], $row['end_date'], $row['description'], 'images/'.$row['category_id'].'.svg', $row['category_id'] );
+            return $event;
+        }
 }
