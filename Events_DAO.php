@@ -47,7 +47,7 @@ class Events_DAO {
             
         }
         public function fetchEventById($id){
-            $query= "select e.name, e.description, e.start_date, e.end_date, e.category_d, c.name 
+            $query= "select e.name, e.description, e.start_date, e.end_date, e.category_id, c.name 
             from events as e
             join categories as c
             on c.id=e.id
