@@ -12,7 +12,7 @@ $dao=new Users_DAO();
 if ($dao->login($username, $password)) {
     header('Location: index.php');
 }else{
-    echo '	Daj se spokoj';
+    echo 'Logowanie nie powiodlo sie ';
 }
 $dao->closeConnection();
    ?>
