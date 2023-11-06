@@ -52,3 +52,4 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 
     <input type="submit" value="Zapisz zmiany">
 </form>
+<a href="index.php">Powrót do Kalendarium</a>
