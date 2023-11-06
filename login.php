@@ -15,13 +15,13 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     if(empty(trim($_POST["username"]))){
         $username_err = "Prosze wprowadzic nazwé uzytkownika.";
     } else{
-        $username = trim($_POST["username"]);
+        $username = trim($_POST['username']);
     }
 
     if(empty(trim($_POST["password"]))){
         $password_err = "Prosze wprowadzic nazwe uzytkownika";
     } else{
-        $password = trim($_POST["password"]);
+        $password = trim($_POST['password']);
     }
 
     if(empty($username_err) && empty($password_err)){
