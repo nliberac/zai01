@@ -11,7 +11,9 @@
         <div class="main">
         <div class="header">
         <h1>Kalendarium</h1>
-        <?php if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false){
+        <?php 
+        session_start();
+        if(isset($_SESSION['loggedin']) && $_SESSION['loggedin']==false){
         echo '<a href="login.html" class="login-button">Logowanie</a>';
         }else{
             echo '<a href="logout.php" class="login-button">Wyloguj</a>';
