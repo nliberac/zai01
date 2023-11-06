@@ -38,8 +38,13 @@ session_start();
             <div class="event-details">
                 <h2><a href="event_details.php?id='.$event->getId().'">'.$event->getName().'</a></h2>
                 <p>Data: '.$event->getStart_date().'</p>
-            </div><div><img src="'.$event->getVisualization().'"></div>
-            </div>';
+            </div><div><img src="'.$event->getVisualization().'"></div>';
+            if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false){
+                echo ' </div>';
+                }else{
+                    echo '<a href="edit.php" class="login-button">Edytuj</a></div>';
+                }; 
+           
         }
         ?>
 
