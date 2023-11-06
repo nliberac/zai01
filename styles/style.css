@@ -163,6 +163,7 @@ label {
 /* Styl dla pól tekstowych i obszarów tekstowych */
 input[type="text"],
 input[type="date"],
+input[type="password"],
 textarea,
 select {
     width: 100%;
