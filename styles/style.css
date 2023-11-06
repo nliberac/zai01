@@ -125,6 +125,16 @@ body{
     background-color: #007bff; 
     border-radius: 5px;
     font-size: 16px; 
+    font-family: 'Poppins';
 }
-
+.edit-button {
+    top: 20px; 
+    right: 20px; 
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff; 
+    background-color: #007bff; 
+    border-radius: 5px;
+    font-size: 16px; 
+}
   

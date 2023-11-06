@@ -42,7 +42,8 @@ session_start();
             if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false){
                 echo ' </div>';
                 }else{
-                    echo '<a href="edit.php" class="login-button">Edytuj</a></div>';
+                    echo '<a href="edit.php" class="edit-button">Edytuj</a>
+                    <a href="delete.php" class="edit-button">Usun</a></div>';
                 }; 
            
         }
