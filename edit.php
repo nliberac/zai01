@@ -15,7 +15,7 @@ if(!$eventId || !is_numeric($eventId)){
 }
 
 $event = $dao->fetchEventById($eventId);
-
+$categories = $dao->fetchAllCategories();
 if($_SERVER['REQUEST_METHOD']==='POST'){
     $updatedEvent = [
         'name' => $_POST['name'],
@@ -48,7 +48,15 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     <p><label for="description">Opis:</label>
     <textarea id="description" name="description" rows="4" cols="50"><?php echo $event->getDescription(); ?></textarea>
     </p>
- 
+    <p><label for="category">Kategoria:</label>
+    <select id="category" name="category_id">
+        <?php foreach($categories as $category): ?>
+            <option value="<?php echo htmlspecialchars($category['id']); ?>"
+                <?php if($event->getCategory_id() == $category['id']) echo 'selected'; ?>>
+                <?php echo htmlspecialchars($category['name']); ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
 
     <input type="submit" value="Zapisz zmiany">
 </form>
