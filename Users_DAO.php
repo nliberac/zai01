@@ -38,6 +38,7 @@ class Users_DAO {
                             $_SESSION['username'] = $username;
                             return true;
                         } else{
+                            echo "Blad weryfikacji hasla";
                             return false;
                         }
                     }
