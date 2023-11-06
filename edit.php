@@ -32,8 +32,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $_SESSION['message'] = 'Nie udalo sie zaktualizowac wydarzenia';
     }
     $currentCategoryName = $dao->fetchCategoryName($eventId);
-    $query = "SELECT id, name FROM categories";
-    $result = $dao->$conn->query($query);
+    $categories = $dao->fetchAllCategories();
 }
 ?>
 
@@ -52,12 +51,12 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 
     <label for="category">Kategoria:</label>
     <select id="category" name="category_id">
-        <?php while($category = $result->fetch_assoc()): ?>
+        <?php foreach ($categories as $category): ?>
             <option value="<?php echo htmlspecialchars($category['id']); ?>"
-                <?php if($currentCategoryName == $category['name']) echo 'selected'; ?>>
+                <?php if ($currentCategoryName == $category['name']) echo 'selected'; ?>>
                 <?php echo htmlspecialchars($category['name']); ?>
             </option>
-        <?php endwhile; ?>
+        <?php endforeach; ?>
     </select>
 
     <input type="submit" value="Zapisz zmiany">

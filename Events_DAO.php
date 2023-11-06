@@ -67,6 +67,19 @@ class Events_DAO {
             $row=$stmt->fetch_assoc();
             return $row['category_name'];
         }
+        public function fetchAllCategories() {
+            $query = "SELECT id, name FROM categories";
+            $categories = array();
+    
+            if ($result = $this->conn->query($query)) {
+                while ($row = $result->fetch_assoc()) {
+                    $categories[] = $row;
+                }
+                $result->free();
+            }
+    
+            return $categories;
+        }
         public function deleteEvent($eventId){
             $query = "DELETE FROM events WHERE id = ?";
             if($stmt = $this->conn->prepare($query)){
