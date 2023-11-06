@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     if($dao->updateEvent($event, $updatedEvent)){
         $_SESSION['message'] = 'Wydarzenie zostalo zaktualizowane';
         header('Location: index.php');
-        exit;
+        
     }else{
         $_SESSION['message'] = 'Nie udalo sie zaktualizowac wydarzenia';
     }
