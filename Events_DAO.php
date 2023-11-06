@@ -67,4 +67,17 @@ class Events_DAO {
             $row=$stmt->fetch_assoc();
             return $row['category_name'];
         }
+        public function deleteEvent($eventId){
+            $query = "DELETE FROM events WHERE id = ?";
+            if($stmt = $this->conn->prepare($query)){
+                $stmt->bind_param("i", $eventId);
+                if($stmt->execute()){
+                    $stmt->close();
+                    return true;
+                }
+                $stmt->close();
+            }
+            return false;
+        }
+        
 }
