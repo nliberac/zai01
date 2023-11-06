@@ -34,8 +34,16 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
  
 }
 ?>
-
-<form action="edit.php?id=<?php echo $eventId; ?>" method="post">
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Edycja</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
+    </head>
+    <body>
+    <form action="edit.php?id=<?php echo $eventId; ?>" method="post">
     <label for="name">Nazwa wydarzenia:</label>
     <input type="text" id="name" name="name" value="<?php echo $event->getName(); ?>" required>
 
@@ -61,3 +69,5 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     <input type="submit" value="Zapisz zmiany">
 </form>
 <a href="index.php">Powrót do Kalendarium</a>
+    </body>
+</html>
