@@ -1,13 +1,11 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 
 session_start();
-if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true"){
+/* if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true"){
     header("location: index.php");
     exit;
-}
+} */
 require_once "config.php";
 
 $username = $password ="";
