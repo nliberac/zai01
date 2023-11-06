@@ -43,8 +43,7 @@ class Users_DAO {
                         }
                     }
                 } else{
-                    echo $stmt->num_rows;
-                    echo "kurwa";
+                 
                     return false;
                 }
             }else{
