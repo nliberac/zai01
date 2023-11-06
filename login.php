@@ -5,7 +5,7 @@ require_once "Users_DAO.php";
 
 $username = isset($_POST['username'])? trim($_POST['username']) :'';
 $password = isset($_POST['password'])? trim($_POST['password']) :'';
-echo''.$username.''.$password.'';
+
 
 $dao=new Users_DAO();
 
