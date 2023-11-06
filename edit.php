@@ -31,8 +31,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     }else{
         $_SESSION['message'] = 'Nie udalo sie zaktualizowac wydarzenia';
     }
-    $currentCategoryName = $dao->fetchCategoryName($eventId);
-    $categories = $dao->fetchAllCategories();
+ 
 }
 ?>
 
@@ -40,24 +39,16 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
     <label for="name">Nazwa wydarzenia:</label>
     <input type="text" id="name" name="name" value="<?php echo $event->getName(); ?>" required>
 
-    <label for="start_date">Data rozpoczęcia:</label>
+    <p><label for="start_date">Data rozpoczęcia:</label>
     <input type="date" id="start_date" name="start_date" value="<?php echo $event->getStart_date(); ?>" required>
-    
-    <label for="end_date">Data zakonczenia:</label>
+    </p>
+    <p><label for="end_date">Data zakonczenia:</label>
     <input type="date" id="end_date" name="end_date" value="<?php echo $event->getEnd_date(); ?>" required>
-
-    <label for="description">Opis:</label>
+    </p>
+    <p><label for="description">Opis:</label>
     <textarea id="description" name="description" rows="4" cols="50"><?php echo $event->getDescription(); ?></textarea>
-
-    <label for="category">Kategoria:</label>
-    <select id="category" name="category_id">
-        <?php foreach ($categories as $category): ?>
-            <option value="<?php echo htmlspecialchars($category['id']); ?>"
-                <?php if ($currentCategoryName == $category['name']) echo 'selected'; ?>>
-                <?php echo htmlspecialchars($category['name']); ?>
-            </option>
-        <?php endforeach; ?>
-    </select>
+    </p>
+ 
 
     <input type="submit" value="Zapisz zmiany">
 </form>
