@@ -79,5 +79,18 @@ class Events_DAO {
             }
             return false;
         }
+        public function updateEvent($eventId, $eventData){
+            $query = "UPDATE events SET name = ?, start_date = ?, end_date = ?, description = ?, category_id = ? WHERE id = ?";
+            if($stmt = $this->conn->prepare($query)){
+                $stmt->bind_param("ssssii", $eventData['name'], $eventData['start_date'], $eventData['end_date'],$eventData['description'], $eventData['category_id'], $eventId);
+                if($stmt->execute()){
+                    $stmt->close();
+                    return true;
+                }
+                $stmt->close();
+            }
+            return false;
+        }
+        
         
 }
