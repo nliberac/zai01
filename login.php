@@ -1,4 +1,8 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] == "true"){
     header("location: index.php");
@@ -26,9 +30,9 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
         $sql = "select id, username, password from users where username = ?";
 
         if($stmt = mysqli_prepare($link, $sql)){
-            mysqli_stmt_bind_param($stmt, "s", $param_sername);
+            mysqli_stmt_bind_param($stmt, "s", $param_username);
 
-            $param_sername=$username;
+            $param_username=$username;
 
             if(mysqli_stmt_execute($stmt)){
                 mysqli_stmt_store_result($stmt);
