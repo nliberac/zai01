@@ -65,5 +65,6 @@ $categories = $dao->fetchAllCategories();
 
         <input type="submit" value="Dodaj Wydarzenie">
     </form>
+    <a href="index.php">Powrót do Kalendarium</a></div>
 </body>
 </html>
