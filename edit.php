@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         'description'=> $_POST['description'],
         'category_id'=> $_POST['category_id']
     ];
-    if($dao->updateEvent($event, $updatedEvent)){
+    if($dao->updateEvent($eventId, $updatedEvent)){
         $_SESSION['message'] = 'Wydarzenie zostalo zaktualizowane';
         header('Location: index.php');
         exit;
