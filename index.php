@@ -13,20 +13,15 @@ session_start();
     <body>
         <div class="main">
         <div class="header">
-        <h1>Kalendarium
-        <?php    
-        if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false){
-            echo'</h1>';
-        }else{
-            echo '<a href="new.php" class="login-button">Nowe</a></h1>';
-        }
-       ?>
+        <h1>Kalendarium</h1>
+
         <?php 
         
         if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false){
         echo '<a href="login.html" class="login-button">Logowanie</a>';
         }else{
-            echo '<a href="logout.php" class="login-button">Wyloguj</a>';
+            echo '<a href="new.php" class="login-button">Nowe</a>
+            <a href="logout.php" class="login-button">Wyloguj</a>';
         }; 
         ?>
         </div>
