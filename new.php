@@ -41,6 +41,7 @@ $categories = $dao->fetchAllCategories();
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins&display=swap">
 </head>
 <body>
+    <div class="main">
     <form action="new.php" method="post">
         <label for="name">Nazwa wydarzenia:</label>
         <input type="text" id="name" name="name" required>
