@@ -18,7 +18,7 @@ session_start();
         <?php 
         
         if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false){
-        echo '<a href="login.html" class="login-button">Logowanie</a>';
+        echo '<a href="login.html" class="login-button no-print">Logowanie</a>';
         }else{
             echo '<a href="new.php" class="login-button">Nowe wydarzenie</a>
             <a href="logout.php" class="login-button">Wyloguj</a>';

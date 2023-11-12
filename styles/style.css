@@ -139,13 +139,13 @@ body{
     font-size: 16px; 
 }
   
-/* Resetowanie stylów dla formularzy */
+
 input, select, textarea, button {
     font-family: inherit;
     font-size: 100%;
 }
 
-/* Styl dla formularzy */
+
 form {
     max-width: 600px;
     margin: 20px auto;
@@ -154,13 +154,13 @@ form {
     border-radius: 10px;
 }
 
-/* Styl dla etykiet (label) */
+
 label {
     display: block;
     margin-bottom: 10px;
 }
 
-/* Styl dla pól tekstowych i obszarów tekstowych */
+
 input[type="text"],
 input[type="date"],
 input[type="password"],
@@ -173,12 +173,12 @@ select {
     border-radius: 4px;
 }
 
-/* Styl dla obszaru tekstowego */
+
 textarea {
-    resize: vertical; /* Pozwala użytkownikowi tylko na pionowe skalowanie */
+    resize: vertical; 
 }
 
-/* Styl dla przycisków */
+
 input[type="submit"] {
     background-color: #4CAF50;
     color: white;
@@ -192,13 +192,13 @@ input[type="submit"]:hover {
     background-color: #45a049;
 }
 
-/* Odpowiednie odstępy dla checkboxów i radiobuttonów */
+
 input[type="checkbox"],
 input[type="radio"] {
     margin: 0 10px 0 0;
 }
 
-/* Styl dla komunikatów walidacji lub informacji */
+
 .message {
     color: #d8000c;
     background-color: #ffbaba;
@@ -207,7 +207,7 @@ input[type="radio"] {
     margin-bottom: 20px;
 }
 
-/* Styl dla komunikatów sukcesu */
+
 .success {
     color: #4F8A10;
     background-color: #DFF2BF;
@@ -216,9 +216,25 @@ input[type="radio"] {
     margin-bottom: 20px;
 }
 
-/* Drobne ulepszenia dla lepszej responsywności */
 @media (max-width: 767px) {
     form {
         padding: 10px;
+    }
+}
+@media print {
+   
+    .no-print, .no-print * {
+        display: none !important;
+    }
+
+   
+    body {
+        font-size: 12pt;
+    }
+
+    
+    .event {
+        page-break-inside: avoid;
+        margin-bottom: 20px;
     }
 }
