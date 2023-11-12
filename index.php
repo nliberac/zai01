@@ -18,10 +18,12 @@ session_start();
         <?php 
         
         if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false){
-        echo '<a href="login.html" class="login-button no-print">Logowanie</a>';
+        echo '<a href="login.html" class="login-button no-print">Logowanie</a>
+        <a href="#" onclick="window.print();return false;" class="login-button no-print">Drukuj</a>';
         }else{
-            echo '<a href="new.php" class="login-button">Nowe wydarzenie</a>
-            <a href="logout.php" class="login-button">Wyloguj</a>';
+            echo '<a href="new.php" class="login-button no-print">Nowe wydarzenie</a>
+            <a href="logout.php" class="login-button no-print">Wyloguj</a>
+            <a href="#" onclick="window.print();return false;" class="login-button no-print">Drukuj</a>';
         }; 
         ?>
         </div>
@@ -44,8 +46,8 @@ session_start();
             if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']==false){
                 echo ' </div>';
                 }else{
-                    echo '<a href="edit.php?id='.$event->getId().'" class="edit-button">Edytuj</a>
-                    <a href="delete.php?id='.$event->getId().'" class="edit-button">Usun</a></div>';
+                    echo '<a href="edit.php?id='.$event->getId().'" class="edit-button no-print">Edytuj</a>
+                    <a href="delete.php?id='.$event->getId().'" class="edit-button no-print">Usun</a></div>';
                 }; 
            
         }
