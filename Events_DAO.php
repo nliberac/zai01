@@ -104,6 +104,20 @@ class Events_DAO {
             }
             return false;
         }
+        public function addEvent($eventData){
+            $query = "INSERT INTO events (name, description, start_date, end_date, category_id)
+            VALUES (?, ?, ?, ?, ?)";
+            if($stmt = $this->conn->prepare($query)){
+                $stmt->bind_param("ssssi", $eventData['name'], $eventData['description'], $eventData['start_date'], $eventData['end_date'], $eventData['category_id']);
+                if($stmt->execute()){
+                    $stmt->close();
+                    return true;
+                }
+                $stmt->close();
+
+            }
+            return false;
+        }
         
         
 }
